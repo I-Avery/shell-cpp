@@ -1,6 +1,7 @@
 #include <iostream>
 #include <string>
 
+
 int main() {
   // Flush after every std::cout / std:cerr
   std::cout << std::unitbuf;
@@ -8,4 +9,10 @@ int main() {
 
   // TODO: Uncomment the code below to pass the first stage
   std::cout << "$ ";
+
+  std::string userInput;
+
+  std::cin >> userInput;
+
+  std::cout << userInput << ": command not found";
 }
