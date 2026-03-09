@@ -15,6 +15,13 @@ int main() {
 
   std::cin >> userInput;
 
-  std::cout << userInput << ": command not found\n";
+  if (userInput == "exit")
+  {
+    break;
+  } else {
+    std::cout << userInput << ": command not found\n";
+  }
+
+  
 }
 }
