@@ -40,7 +40,7 @@ int main() {
 
   // "type" implementation
   if (userInput.substr(0,4) == "type"){
-    if (usrInVec[1] == "echo" || usrInVec[1] == "exit") {
+    if (usrInVec[1] == "echo" || usrInVec[1] == "exit" || usrInVec[1] == "type") {
     std::cout << usrInVec[1] << " is a shell builtin\n";
     }
   } else {
