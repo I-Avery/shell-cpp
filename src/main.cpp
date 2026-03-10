@@ -42,6 +42,8 @@ int main() {
   if (userInput.substr(0,4) == "type"){
     if (usrInVec[1] == "echo" || usrInVec[1] == "exit" || usrInVec[1] == "type") {
     std::cout << usrInVec[1] << " is a shell builtin\n";
+    } else {
+      std::cout << usrInVec[1] << ": not found\n";
     }
   } else {
     std::cout << userInput << ": command not found\n";
