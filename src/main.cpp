@@ -26,15 +26,19 @@ int main() {
     break;
   } 
   // implementing "echo"
-  else if (firstWord == "echo") {
+  if (firstWord == "echo") {
+  int count = 0;
 
     // loop each word from the getline(userInput) into firstWord
     while(ss >> firstWord) {
-      if (firstWord != "echo") {
-        std::cout << firstWord << ' ';
+      if (firstWord != "echo" && count == 0) {
+        std::cout << firstWord;
+        count++;
+      } else {
+        std::cout << ' ' << firstWord;
     }
   } 
-}else {
+} else {
     std::cout << userInput << ": command not found\n";
   }
 
