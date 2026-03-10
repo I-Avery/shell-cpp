@@ -42,6 +42,7 @@ int main() {
     std::cout << userInput << ": command not found\n";
     }
     if (true){
+      std::cout << '\n' << "$ ";
       break;
     }
 
