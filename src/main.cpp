@@ -27,6 +27,7 @@ int main() {
   
   // "echo" implementation
   int count = 0;
+  ss >> word;
   if (word == "echo") {
     while(ss >> word) {
       if (count != 0){
