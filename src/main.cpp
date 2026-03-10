@@ -1,10 +1,12 @@
 #include <cstring>
 #include <iostream>
 #include <string>
+#include <unordered_set>
 #include <vector>
 #include <sstream>
 
-std::string keywordChecker(std::string);
+void echo(std::string);
+void type(std::string);
 
 int main() {
   // Flush after every std::cout / std:cerr
@@ -16,18 +18,9 @@ int main() {
   std::cout << "$ ";
 
   std::string userInput;
-  std::string word;
-  std::vector<std::string> usrInVec;
 
   // get the user input
   std::getline(std::cin, userInput);
-  std::stringstream ss(userInput);
-
-  // make the userInput string a vector
-  while(ss >> word){
-    usrInVec.push_back(word);
-  }
-  // std::cout << usrInVec[1];
 
   // exiting the shell
   if (userInput == "exit"){
@@ -36,16 +29,12 @@ int main() {
   
   // "echo" implementation
   if (userInput.substr(0,5) == "echo "){
-    std::cout << userInput.substr(5) << '\n';
+    echo(userInput);
   }
 
   // "type" implementation
   else if (userInput.substr(0,4) == "type"){
-    if (usrInVec[1] == "echo" || usrInVec[1] == "exit" || usrInVec[1] == "type") {
-    std::cout << usrInVec[1] << " is a shell builtin\n";
-    } else {
-      std::cout << usrInVec[1] << ": not found\n";
-    }
+    type(userInput);
   } else {
     std::cout << userInput << ": command not found\n";
     }
@@ -53,3 +42,27 @@ int main() {
   }
 }
 
+// echo implementation
+void echo(std::string userInput){
+  std::cout << userInput.substr(5) << '\n';
+}
+
+// type implementation
+void type(std::string userInput){
+  std::unordered_set<std::string> keywords = {"echo", "exit", "type"};
+  std::stringstream ss(userInput);
+  std::string word;
+  std::vector<std::string> usrInptWordsList;
+
+  while (ss >> word){
+    usrInptWordsList.push_back(word);
+  }
+
+  if (keywords.count(usrInptWordsList[1])) {
+    std::cout << usrInptWordsList[1] << " is a shell builtin\n";
+  } else {
+    std::cout << usrInptWordsList[1] << ": not found\n";
+  }
+
+
+}
