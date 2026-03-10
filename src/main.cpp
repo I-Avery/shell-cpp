@@ -18,9 +18,9 @@ int main() {
   std::string userInput;
   std::string word;
   std::vector<std::string> usrInVec;
-  std::stringstream ss(userInput);
   // get the user input
   std::getline(std::cin, userInput);
+  std::stringstream ss(userInput);
 
   // make the userInput string a vector
   while(ss >> word){
