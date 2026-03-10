@@ -17,32 +17,35 @@ int main() {
 
   std::getline(std::cin, userInput);
 
-  std::string firstWord;
+  std::string word;
   std::stringstream ss(userInput);
-  ss >> firstWord;
 
   // exiting the shell
   if (userInput == "exit"){
     break;
   } 
-  // implementing "echo"
-  if (firstWord == "echo") {
+  
+  // "echo" implementation
   int count = 0;
+  if (word == "echo") {
+    while(ss >> word) {
+      if (count != 0){
+        std::cout << ' ' << word;
+        } else {
+          std::cout << word;
+          count++;
+        }
 
-    // loop each word from the getline(userInput) into firstWord
-    while(ss >> firstWord) {
-      if (firstWord != "echo" && count == 0) {
-        std::cout << firstWord;
-        count++;
-      } else {
-        std::cout << ' ' << firstWord;
     }
-  } 
-} else {
+  } else {
     std::cout << userInput << ": command not found\n";
-  }
+    }
+    if (true){
+      break;
+    }
 
   
 
-}
+  }
+
 }
