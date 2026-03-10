@@ -18,7 +18,7 @@ int main() {
   std::string userInput;
   std::string word;
   std::vector<std::string> usrInVec;
-  
+
   // get the user input
   std::getline(std::cin, userInput);
   std::stringstream ss(userInput);
@@ -40,7 +40,7 @@ int main() {
   }
 
   // "type" implementation
-  if (userInput.substr(0,4) == "type"){
+  else if (userInput.substr(0,4) == "type"){
     if (usrInVec[1] == "echo" || usrInVec[1] == "exit" || usrInVec[1] == "type") {
     std::cout << usrInVec[1] << " is a shell builtin\n";
     } else {
