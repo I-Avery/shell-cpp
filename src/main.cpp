@@ -1,6 +1,6 @@
 #include <iostream>
 #include <string>
-#include <sstream>
+
 
 
 int main() {
@@ -16,9 +16,6 @@ int main() {
 
   std::getline(std::cin, userInput);
 
-  std::string word;
-  std::stringstream ss(userInput);
-
   // exiting the shell
   if (userInput == "exit"){
     break;
@@ -26,8 +23,8 @@ int main() {
   
 
   // "echo" implementation
-  if (userInput.substr(0,4) == "echo "){
-    std::cout << userInput.substr(5) << '\n';
+  if (userInput.substr(0,5) == "echo "){
+    std::cout << userInput.substr(6) << '\n';
   } else {
     std::cout << userInput << ": command not found\n";
     }
