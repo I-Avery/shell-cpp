@@ -1,7 +1,6 @@
 #include <iostream>
 #include <string>
 #include <sstream>
-#include <vector>
 
 
 int main() {
@@ -25,32 +24,12 @@ int main() {
     break;
   } 
   
-  // "echo" implementation
-  int count = 0;
-  ss >> word;
-  if (word == "echo") {
-    while(ss >> word) {
-      if (count != 0){
-        std::cout << ' ' << word;
-        } else {
-          std::cout << word;
-          count++;
-        }
 
-    }
-    count = 0;
-    std::cout << '\n';
+  // "echo" implementation
+  if (userInput.substr(0,4) == "echo "){
+    std::cout << userInput.substr(5) << '\n';
   } else {
     std::cout << userInput << ": command not found\n";
     }
-    
-    if (true){
-          std::cout << "$ ";
-          break;
-    }
-  
-
   }
-
-
 }
