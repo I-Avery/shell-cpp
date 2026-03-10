@@ -19,14 +19,14 @@ int main() {
   std::string word;
   std::vector<std::string> usrInVec;
   std::stringstream ss(userInput);
+  // get the user input
+  std::getline(std::cin, userInput);
 
   // make the userInput string a vector
   while(ss >> word){
     usrInVec.push_back(word);
   }
-
-
-  std::getline(std::cin, userInput);
+  // std::cout << usrInVec[1];
 
   // exiting the shell
   if (userInput == "exit"){
