@@ -38,6 +38,7 @@ int main() {
         }
 
     }
+    count = 0;
   } else {
     std::cout << userInput << ": command not found\n";
     }
