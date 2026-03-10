@@ -39,16 +39,18 @@ int main() {
 
     }
     count = 0;
+    std::cout << '\n';
   } else {
     std::cout << userInput << ": command not found\n";
     }
+    
     if (true){
-      std::cout << '\n' << "$ ";
-      break;
+          std::cout << '\n' << "$ ";
+          break;
     }
-
   
 
   }
+  
 
 }
