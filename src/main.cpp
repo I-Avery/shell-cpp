@@ -1,5 +1,7 @@
 #include <iostream>
 #include <string>
+#include <sstream>
+#include <vector>
 
 
 int main() {
@@ -13,19 +15,30 @@ int main() {
 
   std::string userInput;
 
-  std::cin >> userInput;
+  std::getline(std::cin, userInput);
+
+  std::string firstWord;
+  std::stringstream ss(userInput);
+  ss >> firstWord;
 
   // exiting the shell
   if (userInput == "exit"){
     break;
-  } else if (userInput.substr(0,5) == "echo") {
-    std::cout << userInput.substr(5) << "\n";
   } 
+  // implementing "echo"
+  else if (firstWord == "echo") {
 
-  else {
+    // loop each word from the getline(userInput) into firstWord
+    while(ss >> firstWord) {
+      if (firstWord != "echo") {
+        std::cout << firstWord << ' ';
+    }
+  } 
+}else {
     std::cout << userInput << ": command not found\n";
   }
 
   
+
 }
 }
