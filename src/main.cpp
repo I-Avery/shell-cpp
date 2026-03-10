@@ -45,12 +45,12 @@ int main() {
     }
     
     if (true){
-          std::cout << '\n' << "$ ";
+          std::cout << "$ ";
           break;
     }
   
 
   }
-  
+
 
 }
