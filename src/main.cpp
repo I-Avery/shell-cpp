@@ -105,6 +105,8 @@ bool checkDirectories(std::string keywordToCheck){
       }
 
     }
-  }
+  } 
+  // if we check all possible paths and still no return true then return false?
+  return false;
 
 }
