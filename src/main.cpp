@@ -100,7 +100,7 @@ bool checkDirectories(std::string keywordToCheck){
       auto filePerms = fs::status(fullPath).permissions();
 
       if ((filePerms & fs::perms::owner_exec) != fs::perms::none){
-        std::cout << fullPath.string();
+        std::cout << fullPath.string() << '\n';
         return true;
       }
 
