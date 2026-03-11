@@ -1,0 +1,5 @@
+.git
+.dockerignore
+**/*.exe
+**/*.o
+build/
